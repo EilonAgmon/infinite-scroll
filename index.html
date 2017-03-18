@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World</title>
+    <title>Eilon Agmon Resume</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -10,33 +11,32 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-var ProductItem = React.createClass({
+
+var ResumePart = React.createClass({
   render: function () {
     return (
-      <tr>
-        <td>{this.props.name}</td>
-        <td>{this.props.price}</td>
-      </tr>
+	<div className="resume-part">
+			<div className="header">{this.props.name}</div>
+	  </div>
     );
   }
 });
 
-var ProductList = React.createClass({
+var ResumePartsList = React.createClass({
   render: function () {
-    var products = this.props.products.map(function (product, index) {
+    var resumeParts = this.props.resumeParts.map(function (part, index) {
       return (
-        <ProductItem
+        <ResumePart
           key={index}
-          name={product.name}
-          price={product.price}
+          name={part.name}
         />
       );
     });
     
     return (
-      <table>
-        {products}
-      </table>
+      <div>
+        {resumeParts}
+      </div>
     );
   }
 });
@@ -48,8 +48,17 @@ var products = [
   { name: 'Coffee', price: 300 }
 ];
 
-ReactDOM.render(<ProductList products={products} />, document.getElementById('root'));
+var resumeParts = [
+  { name: 'Header'},
+  { name: 'Summary'},
+  { name: 'Experience'},
+  { name: 'Education'},
+  { name: 'Army'}
+];
+
+var headerParts = ['20 Frishman St, Tel-Aviv, Israel', '(+972) 050-4266667', 'agmoneilon@gmail.com'];
+
+ReactDOM.render(<ResumePartsList resumeParts={resumeParts} />, document.getElementById('root'));
     </script>
   </body>
 </html>
-
