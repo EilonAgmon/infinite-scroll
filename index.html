@@ -1,76 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset="UTF-8" />
-    <title>Eilon Agmon Resume</title>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
-    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-	
-	<style>
-.resume-part {
-	font-size: 16px;
-	color: red;
-	background-color: green;
-	text-align: center;
-	height: 150px;
-	width: 1200px;
-}
-</style>
-
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | UFO Game</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="text/babel">
+  <body class="template">
+    <div class="template-wrap clear">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
+      <br>
+      <div class="logo"></div>
+      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+      <div class="title">UFO Game</div>
+    </div>
+    <script type='text/javascript'>
+  var Module = {
+    TOTAL_MEMORY: 268435456,
+    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+    compatibilitycheck: null,
+    backgroundColor: "#222C36",
+    splashStyle: "Light",
+    dataUrl: "Development/Eilon Web.data",
+    codeUrl: "Development/Eilon Web.js",
+    asmUrl: "Development/Eilon Web.asm.js",
+    memUrl: "Development/Eilon Web.mem",
+  };
+</script>
+<script src="Development/UnityLoader.js"></script>
 
-var ResumePart = React.createClass({
-  render: function () {
-    return (
-	<div className="resume-part">
-			<div className="header">{this.props.name}</div>
-	  </div>
-    );
-  }
-});
-
-var ResumePartsList = React.createClass({
-  render: function () {
-    var resumeParts = this.props.resumeParts.map(function (part, index) {
-      return (
-        <ResumePart
-          key={index}
-          name={part.name}
-        />
-      );
-    });
-    
-    return (
-      <div>
-        {resumeParts}
-      </div>
-    );
-  }
-});
-
-// Could come from an API, LocalStorage, another component, etc...
-var products = [
-  { name: 'Toast', price: 1499 },
-  { name: 'Bacon', price: 3245 },
-  { name: 'Coffee', price: 300 }
-];
-
-var resumeParts = [
-  { name: 'Header'},
-  { name: 'Summary'},
-  { name: 'Experience'},
-  { name: 'Education'},
-  { name: 'Army'}
-];
-
-var headerParts = ['20 Frishman St, Tel-Aviv, Israel', '(+972) 050-4266667', 'agmoneilon@gmail.com'];
-
-ReactDOM.render(<ResumePartsList resumeParts={resumeParts} />, document.getElementById('root'));
-    </script>
   </body>
 </html>
