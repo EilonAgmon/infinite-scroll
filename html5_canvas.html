@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Eilon Agmon's Sandbox</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style"/>
+  <link rel="stylesheet" type="text/css" href="style/moving_canvas.css" title="style"/>
+  <script src="movingCanvas.js"></script>
+  <style>
+
+</style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+		<img src="images/my_small_cartoon.png" id="my_icon">
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="html5_canvas.html">HTML5</a></li>
+          <li><a href="react.html">React</a></li>
+          <li class="passion"><a href="passion.html">Passion</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="specific_content">
+        <h2>HTML5 is super cool. Heaven for simple web games</h2>
+		</br>
+		<button id="html_game_btn"onclick="runGame()">Run Example Game</button>
+		<div id="canvas_game_conatiner" style="visibility:hidden">
+			<div id="canvas_game"></div>
+			<div style="text-align:center;width:480px;">
+			  <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
+			  <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
+			  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+			  <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+			</div>
+
+			<p>The score will count one point for each frame you manage to "stay alive".</p>
+		</div>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p>Eilon Agmon's Git Hub Page 2017</p>
+    </div>
+  </div>
+</body>
+</html>
