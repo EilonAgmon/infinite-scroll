@@ -34,16 +34,17 @@
       <div id="specific_content">
         <h2>HTML5 is super cool. Heaven for simple web games</h2>
 		</br>
-		<button id="html_game_btn"onclick="runGame()">Run Example Game</button>
+		<button id="html_game_btn" onclick="runGame()">Run Example Game</button>
 		<div id="canvas_game_conatiner" style="visibility:hidden">
 			<div id="canvas_game"></div>
-			<div style="text-align:center;width:480px;">
-			  <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
-			  <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
-			  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
-			  <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+			</br>
+			<div class="direction-buttons">
+			  <button onmousedown="moveup()" id="direction_btn" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
+			  <button onmousedown="moveleft()" id="direction_btn" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
+			  <button onmousedown="moveright()" id="direction_btn" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+			  <button onmousedown="movedown()" id="direction_btn" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
 			</div>
-
+			</br>
 			<p>The score will count one point for each frame you manage to "stay alive".</p>
 		</div>
       </div>
