@@ -3,13 +3,15 @@ var myGamePiece;
 var myObstacles = [];
 var myScore;
 
+
+
 function runGame() {
 	document.getElementById('canvas_game_conatiner').style.visibility = "visible";
 	startGame();
 }
 
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGamePiece = new component(30, 30, "green", 10, 120);
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
 }
@@ -91,8 +93,9 @@ function updateGameArea() {
         minGap = 50;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(10, height, "green", x, 0));
-        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+		var color = "RGB(170, 51, 17)";
+        myObstacles.push(new component(20, height, color, x, 0));
+        myObstacles.push(new component(20, x - height - gap, color, x, height + gap));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].speedX = -1;
