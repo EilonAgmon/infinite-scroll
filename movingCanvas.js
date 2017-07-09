@@ -7,6 +7,7 @@ var myScore;
 
 function runGame() {
 	document.getElementById('canvas_game_conatiner').style.visibility = "visible";
+	document.getElementById('html_game_btn').style.visibility = "hidden";
 	startGame();
 }
 
