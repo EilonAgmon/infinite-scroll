@@ -33,7 +33,7 @@ function doMyShit() {
 	}
 	isRequesting = true;
 	$('#loading').show();
-			var apiURL = "http://message-list.appspot.com/messages";
+			var apiURL = "https://message-list.appspot.com/messages";
 			
 			$.ajax({
     url: apiURL,
